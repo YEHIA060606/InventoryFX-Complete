@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.UsersController">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10">
+                <Button text="← Retour" onAction="#goBack"
+                        style="-fx-background-color:#636e72; -fx-text-fill:white;"/>
+
+                <Label text="Gestion des Utilisateurs"
+                       style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+            </HBox>
+
+            <TextField fx:id="searchField"
+                       promptText="Rechercher un utilisateur (id, username, email, rôle...)"/>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="userTable">
+            <columns>
+                <TableColumn fx:id="colId"       text="ID"                prefWidth="60"/>
+                <TableColumn fx:id="colUsername" text="Nom d'utilisateur" prefWidth="150"/>
+                <TableColumn fx:id="colEmail"    text="Email"             prefWidth="200"/>
+                <TableColumn fx:id="colRole"     text="Rôle"              prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TextField fx:id="usernameField" promptText="Nom d'utilisateur" prefWidth="150"/>
+            <TextField fx:id="emailField"    promptText="Email"             prefWidth="200"/>
+            <PasswordField fx:id="passwordField" promptText="Mot de passe"  prefWidth="150"/>
+
+            <ComboBox fx:id="roleBox" promptText="Rôle" prefWidth="120"/>
+
+            <Button text="Ajouter" onAction="#addUser"
+                    style="-fx-background-color:#00b894; -fx-text-fill:white;"/>
+            <Button text="Supprimer" onAction="#deleteUser"
+                    style="-fx-background-color:#d63031; -fx-text-fill:white;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ProductsController">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10">
+                <Button text="← Retour" onAction="#goBack"
+                        style="-fx-background-color:#636e72; -fx-text-fill:white;"/>
+
+                <Label text="Gestion des Produits"
+                       styleClass="title-main"/>
+            </HBox>
+
+            <TextField fx:id="searchField"
+                       promptText="Rechercher un produit (nom, id, prix...)"/>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="productsTable">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colNom" text="Nom" prefWidth="150"/>
+                <TableColumn fx:id="colPrix" text="Prix" prefWidth="100"/>
+                <TableColumn fx:id="colQuantite" text="Quantité" prefWidth="100"/>
+                <TableColumn fx:id="colFournisseur" text="Fournisseur" prefWidth="130"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TextField fx:id="nomField" promptText="Nom"/>
+            <TextField fx:id="prixField" promptText="Prix"/>
+            <TextField fx:id="quantiteField" promptText="Quantité"/>
+            <ComboBox fx:id="fournisseurBox" promptText="Fournisseur"/>
+
+            <Button text="Ajouter" onAction="#addProduct"
+                    styleClass="btn-success"/>
+
+            <Button text="Modifier" onAction="#updateProduct"
+                    styleClass="btn-primary"/>
+
+            <Button text="Supprimer" onAction="#deleteProduct"
+                    styleClass="btn-danger"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
