@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.StockController">
+
+    <!-- ENTÊTE : retour + titre + recherche -->
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10">
+                <Button text="← Retour" onAction="#goBack"
+                        style="-fx-background-color:#636e72; -fx-text-fill:white;"/>
+
+                <Label text="Gestion du Stock"
+                       styleClass="title-main"/>
+            </HBox>
+
+            <TextField fx:id="searchField"
+                       promptText="Rechercher un produit (ID, nom, fournisseur...)"/>
+        </VBox>
+    </top>
+
+    <!-- TABLE DES PRODUITS -->
+    <center>
+        <TableView fx:id="productTable">
+            <columns>
+                <TableColumn fx:id="colId"         text="ID"          prefWidth="60"/>
+                <TableColumn fx:id="colNom"        text="Nom"         prefWidth="150"/>
+                <TableColumn fx:id="colPrix"       text="Prix"        prefWidth="100"/>
+                <TableColumn fx:id="colQuantite"   text="Quantité"    prefWidth="100"/>
+                <TableColumn fx:id="colFournisseur" text="Fournisseur" prefWidth="130"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- FORMULAIRE EN BAS : mouvement de stock -->
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TextField fx:id="qttField" promptText="Quantité"/>
+            <ComboBox fx:id="typeBox" promptText="Type (ENTREE / SORTIE)"/>
+
+            <Button text="Appliquer"
+                    onAction="#applyMovement"
+                    styleClass="btn-purple"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
