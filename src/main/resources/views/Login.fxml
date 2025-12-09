@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.LoginController"
+            styleClass="login-root">
+
+    <!-- Top bar très simple avec le nom de l’app -->
+    <top>
+        <HBox styleClass="login-topbar"
+              alignment="CENTER_LEFT"
+              spacing="8">
+            <padding>
+                <Insets top="10" right="24" bottom="10" left="24"/>
+            </padding>
+
+            <ImageView fitHeight="22" preserveRatio="true">
+                <image>
+                    <Image url="@../icons/logo.png"/>
+                </image>
+            </ImageView>
+
+            <Label text="InventoryFX"
+                   styleClass="login-app-title"/>
+        </HBox>
+    </top>
+
+    <!-- Centre : panneau deux colonnes (gauche bleu / droite form) -->
+    <center>
+        <HBox alignment="CENTER"
+              styleClass="login-page"
+              spacing="40">
+            <padding>
+                <Insets top="40" right="40" bottom="60" left="40"/>
+            </padding>
+
+            <!-- Colonne gauche : présentation -->
+            <VBox styleClass="login-left"
+                  spacing="16">
+                <children>
+                    <Label text="InventoryFX"
+                           styleClass="login-left-title"/>
+
+                    <Label text="Gérez vos produits, fournisseurs et stock en toute simplicité."
+                           wrapText="true"
+                           styleClass="login-left-subtitle"/>
+
+                    <Label text="• Suivi des mouvements de stock&#10;• Gestion des utilisateurs&#10;• Export CSV et historique"
+                           wrapText="true"
+                           styleClass="login-left-bullets"/>
+                </children>
+            </VBox>
+
+            <!-- Colonne droite : carte de connexion -->
+            <VBox styleClass="login-card"
+                  spacing="16"
+                  alignment="TOP_CENTER">
+                <children>
+
+                    <!-- Logo au-dessus du titre -->
+                    <ImageView fitHeight="32" preserveRatio="true">
+                        <image>
+                            <Image url="@../icons/logo.png"/>
+                        </image>
+                    </ImageView>
+
+                    <Label text="Connexion"
+                           styleClass="login-title"/>
+
+                    <Label text="Connectez-vous pour gérer l’inventaire."
+                           styleClass="login-subtitle"/>
+
+                    <!-- Champs -->
+                    <VBox spacing="10" maxWidth="Infinity">
+                        <children>
+                            <Label text="Nom d'utilisateur ou email"
+                                   styleClass="login-label"/>
+
+                            <TextField fx:id="usernameField"
+                                       promptText="john.doe"
+                                       styleClass="login-field"
+                                       onKeyPressed="#handleEnterKey"/>
+
+                            <Label text="Mot de passe"
+                                   styleClass="login-label"/>
+
+                            <PasswordField fx:id="passwordField"
+                                           promptText="Votre mot de passe"
+                                           styleClass="login-field"
+                                           onKeyPressed="#handleEnterKey"/>
+                        </children>
+                    </VBox>
+
+                    <!-- Lien mot de passe oublié -->
+                    <Hyperlink fx:id="forgotLink"
+                               text="Mot de passe oublié ?"
+                               styleClass="login-forgot"
+                               onAction="#forgotPassword"/>
+
+                    <!-- Bouton Se connecter -->
+                    <Button text="Se connecter"
+                            styleClass="login-button"
+                            maxWidth="Infinity"
+                            onAction="#login"/>
+
+                    <!-- Message d’erreur -->
+                    <Label fx:id="errorLabel"
+                           styleClass="login-error"/>
+                </children>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

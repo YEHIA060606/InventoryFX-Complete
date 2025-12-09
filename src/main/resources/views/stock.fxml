@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.StockController">
+
+    <!-- TOP : Retour + Titre + Export + Recherche -->
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="← Retour" onAction="#goBack"
+                        style="-fx-background-color:#636e72; -fx-text-fill:white;"/>
+
+                <Label text="Gestion du Stock"
+                       styleClass="title-main"/>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <Button text="Exporter CSV"
+                        onAction="#exportCSV"
+                        style="-fx-background-color:#2980b9; -fx-text-fill:white;"/>
+            </HBox>
+
+            <TextField fx:id="searchField"
+                       promptText="Rechercher un produit (id, nom, fournisseur...)"/>
+        </VBox>
+    </top>
+
+    <!-- TABLEAU PRODUITS -->
+    <center>
+        <TableView fx:id="productTable">
+            <columns>
+                <TableColumn fx:id="colId"          text="ID"          prefWidth="60"/>
+                <TableColumn fx:id="colNom"         text="Nom"         prefWidth="150"/>
+                <TableColumn fx:id="colPrix"        text="Prix"        prefWidth="90"/>
+                <TableColumn fx:id="colQuantite"    text="Quantité"    prefWidth="90"/>
+                <TableColumn fx:id="colFournisseur" text="Fournisseur" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- BAS : Mouvement de stock -->
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TextField fx:id="qttField" promptText="Quantité"/>
+            <ComboBox fx:id="typeBox" promptText="Type (ENTREE / SORTIE)"/>
+
+            <Button text="Appliquer mouvement"
+                    onAction="#applyMovement"
+                    style="-fx-background-color:#27ae60; -fx-text-fill:white;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

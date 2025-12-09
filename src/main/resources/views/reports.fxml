@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ReportsController">
+
+    <top>
+        <Label text="Statistiques Générales"
+               style="-fx-font-size:22px; -fx-padding:15;"/>
+    </top>
+
+    <center>
+        <GridPane hgap="20" vgap="20">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <!-- Total produits -->
+            <VBox spacing="5">
+                <Label text="Total Produits" style="-fx-font-size:16;"/>
+                <Label fx:id="totalProductsLabel"
+                       style="-fx-font-size:26; -fx-font-weight:bold;"/>
+            </VBox>
+
+            <!-- Total fournisseurs -->
+            <VBox spacing="5" GridPane.columnIndex="1">
+                <Label text="Total Fournisseurs" style="-fx-font-size:16;"/>
+                <Label fx:id="totalSuppliersLabel"
+                       style="-fx-font-size:26; -fx-font-weight:bold;"/>
+            </VBox>
+
+            <!-- Total utilisateurs -->
+            <VBox spacing="5" GridPane.rowIndex="1">
+                <Label text="Total Utilisateurs" style="-fx-font-size:16;"/>
+                <Label fx:id="totalUsersLabel"
+                       style="-fx-font-size:26; -fx-font-weight:bold;"/>
+            </VBox>
+
+            <!-- Stock total -->
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label text="Stock Total" style="-fx-font-size:16;"/>
+                <Label fx:id="totalStockLabel"
+                       style="-fx-font-size:26; -fx-font-weight:bold;"/>
+            </VBox>
+
+        </GridPane>
+    </center>
+
+</BorderPane>

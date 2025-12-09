@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.HistoryController">
+
+    <!-- TOP : Retour + Titre + Export + Recherche -->
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <!-- 🔙 Bouton retour vers Dashboard -->
+                <Button text="← Retour"
+                        onAction="#goBack"
+                        style="-fx-background-color:#636e72; -fx-text-fill:white;"/>
+
+                <Label text="Historique des Mouvements"
+                       style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <Button text="Exporter CSV"
+                        onAction="#exportCSV"
+                        style="-fx-background-color:#6c5ce7; -fx-text-fill:white;"/>
+            </HBox>
+
+            <!-- Barre de recherche -->
+            <TextField fx:id="searchField"
+                       promptText="Rechercher (ID, produit, type, date...)"/>
+        </VBox>
+    </top>
+
+    <!-- TABLE -->
+    <center>
+        <TableView fx:id="historyTable">
+            <columns>
+                <TableColumn fx:id="colId"         text="ID"           prefWidth="60"/>
+                <TableColumn fx:id="colProductId"  text="Produit ID"   prefWidth="120"/>
+                <TableColumn fx:id="colType"       text="Type"         prefWidth="100"/>
+                <TableColumn fx:id="colQuantite"   text="Quantité"     prefWidth="100"/>
+                <TableColumn fx:id="colDate"       text="Date"         prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

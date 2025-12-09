@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.DashboardController">
+
+    <stylesheets>
+        <URL value="@../css/style.css"/>
+    </stylesheets>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox spacing="15"
+              prefHeight="60"
+              styleClass="topbar">
+            <children>
+
+                <Label text="InventoryFX"
+                       styleClass="app-logo"/>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <MenuButton text="☰"
+                            styleClass="menu-toggle-right">
+                    <items>
+                        <MenuItem text="Produits" onAction="#goProducts"/>
+                        <MenuItem text="Fournisseurs" onAction="#goSuppliers"/>
+                        <MenuItem text="Stock" onAction="#goStock"/>
+                        <!-- 🔐 On donne un fx:id pour pouvoir le désactiver côté controller -->
+                        <MenuItem fx:id="usersMenuItem" text="Utilisateurs" onAction="#goUsers"/>
+                        <MenuItem text="Historique" onAction="#goHistory"/>
+                        <MenuItem text="Déconnexion" onAction="#logout"/>
+                    </items>
+                </MenuButton>
+
+                <!-- Boutons cachés pour le controller -->
+                <HBox visible="false" managed="false">
+                    <children>
+                        <Button fx:id="productsBtn" onAction="#goProducts"/>
+                        <Button fx:id="suppliersBtn" onAction="#goSuppliers"/>
+                        <Button fx:id="stockBtn" onAction="#goStock"/>
+                        <Button fx:id="usersBtn" onAction="#goUsers"/>
+                        <Button fx:id="logoutBtn" onAction="#logout"/>
+                    </children>
+                </HBox>
+
+            </children>
+        </HBox>
+    </top>
+
+    <!-- CONTENU CENTRAL -->
+    <center>
+        <VBox alignment="CENTER"
+              spacing="30">
+            <children>
+
+                <Label text="Bienvenue dans InventoryFX"
+                       styleClass="big-title"/>
+
+                <HBox alignment="CENTER"
+                      spacing="25">
+                    <children>
+
+                        <!-- Produits -->
+                        <VBox spacing="8"
+                              onMouseClicked="#goProducts"
+                              style="-fx-background-color:#3498db;
+                                     -fx-background-radius:14;
+                                     -fx-padding:16 18;
+                                     -fx-pref-width:260;
+                                     -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.18),12,0,0,4);">
+                            <children>
+                                <Label text="📦 Produits"
+                                       style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                                <Label text="Gérez votre catalogue : ajouts, modifications, suppressions."
+                                       wrapText="true"
+                                       style="-fx-font-size:12px; -fx-text-fill:#ecf0f1;"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Fournisseurs -->
+                        <VBox spacing="8"
+                              onMouseClicked="#goSuppliers"
+                              style="-fx-background-color:#2980b9;
+                                     -fx-background-radius:14;
+                                     -fx-padding:16 18;
+                                     -fx-pref-width:260;
+                                     -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.18),12,0,0,4);">
+                            <children>
+                                <Label text="🚚 Fournisseurs"
+                                       style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                                <Label text="Suivez vos partenaires et leurs informations."
+                                       wrapText="true"
+                                       style="-fx-font-size:12px; -fx-text-fill:#ecf0f1;"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Stock -->
+                        <VBox spacing="8"
+                              onMouseClicked="#goStock"
+                              style="-fx-background-color:#1f6fb5;
+                                     -fx-background-radius:14;
+                                     -fx-padding:16 18;
+                                     -fx-pref-width:260;
+                                     -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.18),12,0,0,4);">
+                            <children>
+                                <Label text="📊 Stock &amp; mouvements"
+                                       style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+                                <Label text="Gérez vos entrées et sorties de stock."
+                                       wrapText="true"
+                                       style="-fx-font-size:12px; -fx-text-fill:#ecf0f1;"/>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </center>
+
+</BorderPane>

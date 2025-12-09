@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.CategoriesController">
+
+    <top>
+        <Label text="Gestion des Catégories"
+               style="-fx-font-size:22px; -fx-padding:15;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="categoryTable">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colNom" text="Nom" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" padding="10">
+            <TextField fx:id="nomField" promptText="Nom catégorie"/>
+
+            <Button text="Ajouter"
+                    onAction="#addCategory"
+                    style="-fx-background-color:#00b894; -fx-text-fill:white;"/>
+
+            <Button text="Modifier"
+                    onAction="#updateCategory"
+                    style="-fx-background-color:#0984e3; -fx-text-fill:white;"/>
+
+            <Button text="Supprimer"
+                    onAction="#deleteCategory"
+                    style="-fx-background-color:#d63031; -fx-text-fill:white;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

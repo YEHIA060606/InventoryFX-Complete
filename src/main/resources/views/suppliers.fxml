@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.SupplierController">
+
+    <!-- TOP : Retour + Titre + Export + Recherche -->
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="← Retour" onAction="#goBack"
+                        style="-fx-background-color:#636e72; -fx-text-fill:white;"/>
+
+                <Label text="Gestion des Fournisseurs"
+                       styleClass="title-main"/>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <Button text="Exporter CSV"
+                        onAction="#exportCSV"
+                        style="-fx-background-color:#0984e3; -fx-text-fill:white;"/>
+            </HBox>
+
+            <!-- Barre de recherche -->
+            <TextField fx:id="searchField"
+                       promptText="Rechercher un fournisseur (id, nom, email, téléphone)"/>
+        </VBox>
+    </top>
+
+    <!-- TABLEAU -->
+    <center>
+        <TableView fx:id="suppliersTable">
+            <columns>
+                <TableColumn fx:id="colId"    text="ID"        prefWidth="60"/>
+                <TableColumn fx:id="colNom"   text="Nom"       prefWidth="150"/>
+                <TableColumn fx:id="colEmail" text="Email"     prefWidth="180"/>
+                <TableColumn fx:id="colTel"   text="Téléphone" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- BAS : Formulaire + boutons -->
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <TextField fx:id="nomField"  promptText="Nom"/>
+            <TextField fx:id="mailField" promptText="Email"/>
+            <TextField fx:id="telField"  promptText="Téléphone"/>
+
+            <Button text="Ajouter" onAction="#addSupplier"
+                    style="-fx-background-color:#00b894; -fx-text-fill:white;"/>
+
+            <Button text="Modifier" onAction="#updateSupplier"
+                    style="-fx-background-color:#0984e3; -fx-text-fill:white;"/>
+
+            <Button text="Supprimer" onAction="#deleteSupplier"
+                    style="-fx-background-color:#d63031; -fx-text-fill:white;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

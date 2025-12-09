@@ -1,0 +1,339 @@
+/* ===== STYLES GÉNÉRAUX ===== */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    /* 🔥 Nouveau fond global pour toutes les pages */
+    -fx-background-color: #e8f0fe;
+}
+
+/* ===== LOGIN ===== */
+
+.title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.input {
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-background-color: white;
+    -fx-border-radius: 8;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1.2;
+    -fx-pref-width: 250;
+}
+
+.login-btn {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.login-btn:hover {
+    -fx-background-color: #2c3e50;
+}
+
+/* ===== TOP BAR DU DASHBOARD ===== */
+
+.topbar {
+    /* même couleur que le fond pour un rendu clean */
+    -fx-background-color: #e8f0fe;
+    -fx-padding: 8 16;
+    -fx-spacing: 10;
+}
+
+.app-logo {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.menu-toggle-right {
+    -fx-background-color: transparent;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 2 10;
+    -fx-cursor: hand;
+}
+
+.menu-toggle-right:hover {
+    -fx-background-color: rgba(0,0,0,0.08);
+    -fx-background-radius: 8;
+}
+
+/* ===== TITRE DU DASHBOARD ===== */
+
+.big-title {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ===== CARTES COLORÉES ===== */
+
+.info-card {
+    -fx-background-radius: 14;
+    -fx-padding: 16 18;
+    -fx-pref-width: 260;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 12, 0, 0, 4);
+    -fx-cursor: hand;
+}
+
+/* Carte bleue : Produits */
+.info-blue {
+    -fx-background-color: linear-gradient(to bottom, #3498db, #1f6fb5);
+}
+
+/* Carte verte : Fournisseurs */
+.info-green {
+    -fx-background-color: linear-gradient(to bottom, #2ecc71, #239b56);
+}
+
+/* Carte orange : Stock & mouvements */
+.info-orange {
+    -fx-background-color: linear-gradient(to bottom, #e67e22, #d35400);
+}
+
+/* Effet hover général sur les cartes */
+.info-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 16, 0, 0, 6);
+    -fx-translate-y: -2;
+}
+
+/* Titre dans les cartes */
+.info-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Texte dans les cartes */
+.info-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ecf0f1;
+}
+/* ===== PAGE DE LOGIN ===== */
+
+.login-root {
+    -fx-background-color: linear-gradient(to bottom, #e5edff, #f5f7fb);
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 24 28;
+    -fx-spacing: 12;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.18), 16, 0, 0, 6);
+    -fx-pref-width: 360;
+}
+
+.login-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.login-btn {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.login-btn:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.login-error {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 11px;
+}
+
+.forgot-link {
+    -fx-text-fill: #2563eb;
+    -fx-font-size: 11px;
+}
+/* === LOGIN PAGE NEW DESIGN =================================== */
+
+.login-topbar {
+    -fx-padding: 10 24 10 24;
+    -fx-background-color: transparent;
+}
+
+.login-page {
+    -fx-padding: 40 40 60 40;
+    -fx-spacing: 40;
+    -fx-background-color: linear-gradient(to bottom, #e9f1ff, #f4f7ff);
+}
+
+/* Panneau gauche (branding) */
+.login-left {
+    -fx-background-color: #1f6fb5;
+    -fx-background-radius: 18;
+    -fx-padding: 32 28;
+    -fx-pref-width: 320;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 16, 0, 0, 6);
+}
+
+.login-left-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.login-left-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #dce9ff;
+}
+
+.login-left-bullets {
+    -fx-font-size: 12px;
+    -fx-text-fill: #c7dcff;
+}
+
+/* Carte de connexion */
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-padding: 28 32 30 32;
+    -fx-pref-width: 360;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 16, 0, 0, 8);
+}
+
+.login-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3436;
+}
+
+.login-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #636e72;
+}
+
+.login-field {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 6 10;
+}
+
+/* Bouton principal */
+.login-button {
+    -fx-background-color: #1e6fff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 999;
+    -fx-padding: 8 16;
+}
+
+.login-button:hover {
+    -fx-background-color: #145be0;
+}
+
+/* Lien oublié */
+.login-forgot {
+    -fx-text-fill: #1e6fff;
+    -fx-font-size: 11px;
+}
+
+/* Message d’erreur */
+.login-error {
+    -fx-text-fill: #d63031;
+    -fx-font-size: 11px;
+}
+/* =========== LOGIN PAGE (style SaaS / gradient) =========== */
+
+.login-root {
+    -fx-background-color: linear-gradient(to bottom right, #4c6fff, #2e86de, #6c5ce7);
+}
+
+/* Carte blanche centrée */
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 24, 0, 0, 8);
+    -fx-spacing: 16;
+    -fx-pref-width: 420;
+}
+
+/* Titre application à côté du logo */
+.login-app-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e272e;
+}
+
+/* Titre "Connexion" */
+.login-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e272e;
+}
+
+.login-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #636e72;
+}
+
+/* Labels champs */
+.login-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #57606f;
+}
+
+/* TextField + PasswordField */
+.login-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dfe6e9;
+    -fx-border-width: 1;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+}
+
+.login-field:focused {
+    -fx-border-color: #4c6fff;
+    -fx-effect: dropshadow(gaussian, rgba(76,111,255,0.25), 10, 0, 0, 3);
+}
+
+/* Lien mot de passe oublié */
+.login-forgot {
+    -fx-font-size: 11px;
+    -fx-text-fill: #4c6fff;
+}
+
+.login-forgot:hover {
+    -fx-underline: true;
+}
+
+/* Message d'erreur */
+.login-error {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 11px;
+}
+
+/* Bouton Se connecter */
+.login-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 999;
+    -fx-padding: 10 0 10 0;
+}
+
+.login-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.login-button:pressed {
+    -fx-background-color: #1a3fb7;
+}
