@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.HistoryController">
+
+    <top>
+        <Label text="Historique des Mouvements"
+               style="-fx-font-size:22px; -fx-padding:15;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="historyTable">
+            <columns>
+                <TableColumn fx:id="colId"         text="ID"           prefWidth="60"/>
+                <TableColumn fx:id="colProductId"  text="Produit ID"   prefWidth="120"/>
+                <TableColumn fx:id="colType"       text="Type"         prefWidth="100"/>
+                <TableColumn fx:id="colQuantite"   text="Quantité"     prefWidth="100"/>
+                <TableColumn fx:id="colDate"       text="Date"         prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

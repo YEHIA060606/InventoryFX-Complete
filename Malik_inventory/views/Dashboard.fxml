@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.DashboardController">
+
+    <!-- MENU GAUCHE -->
+    <left>
+        <VBox spacing="15" prefWidth="220" styleClass="sidebar">
+
+            <Button fx:id="productsBtn"
+                    text="Produits"
+                    onAction="#goProducts"
+                    styleClass="btn-primary"/>
+
+            <Button fx:id="suppliersBtn"
+                    text="Fournisseurs"
+                    onAction="#goSuppliers"
+                    styleClass="btn-primary"/>
+
+            <Button fx:id="stockBtn"
+                    text="Stock"
+                    onAction="#goStock"
+                    styleClass="btn-primary"/>
+
+            <Button fx:id="usersBtn"
+                    text="Utilisateurs"
+                    onAction="#goUsers"
+                    styleClass="btn-purple"/>
+
+            <Button fx:id="logoutBtn"
+                    text="Déconnexion"
+                    onAction="#logout"
+                    styleClass="btn-danger"/>
+        </VBox>
+    </left>
+
+    <!-- CONTENU CENTRAL -->
+    <center>
+        <Label text="Bienvenue dans InventoryFX"
+               styleClass="title-main"
+               style="-fx-padding:40;"/>
+    </center>
+
+</BorderPane>
